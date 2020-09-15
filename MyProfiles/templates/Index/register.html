@@ -1,0 +1,19 @@
+{% extends "Index/index.html" %}
+{% block body_block %}
+<div>
+    <div class="jumbotron jumbotron-fluid" style="padding: 5% 20% 5% 20%;">
+        <form>
+            <div class="form-group">
+              <label for="inputSocialMedia">Social Media</label>
+              <input type="text" class="form-control" id="inputSocialMedia" placeholder="Enter social media site ">
+            </div>
+            <div class="form-group">
+              <label for="inputUserName">User Name</label>              
+              <input type="text" class="form-control" id="inputUserName" placeholder="Enter user Name">
+              <small class="form-text text-muted">We'll never share your user name with anyone else.</small>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg">Submit</button>
+          </form>
+      </div>
+</div>
+{% endblock %}
