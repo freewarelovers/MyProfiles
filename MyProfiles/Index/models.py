@@ -3,9 +3,7 @@ from MyProfiles import settings
 from django.contrib.auth.hashers import make_password
 
 # Create your models here.
-class Profiles(models.Model):
-    social_media = models.CharField(max_length = 264)
-    user_name = models.CharField(max_length = 264)
-
-    def __str__():
-        print("Contains list of all profiles that user has entered")
+class Profile(models.Model):
+    social_media = models.CharField(max_length = 264, null = True)
+    user_name = models.CharField(max_length = 264, null = True)
+    password = models.CharField(max_length = 1000, null = True)
