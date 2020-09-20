@@ -11,7 +11,7 @@ def register(request):
         social_media_site = request.POST.get('inputSocialMedia')
         user_name = request.POST.get('inputUserName')
         passowrd = request.POST.get('inputPassowrd')
-        #enc_password = pbkdf2_sha256.encrypt(passowrd, rounds = 12000, salt_size = 32)
+        password = pbkdf2_sha256.encrypt(passowrd, rounds = 12000, salt_size = 32)
         Profile.objects.create(
             social_media = social_media_site,
             user_name = user_name,
