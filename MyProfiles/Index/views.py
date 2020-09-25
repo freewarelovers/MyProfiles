@@ -17,4 +17,4 @@ def register(request):
             user_name = user_name,
             password = passowrd
         )
-    return render(request, 'Index/register.html')
+    return render(request, 'Index/success.html')
