@@ -17,5 +17,19 @@
             <input type="password" class="form-control" id="inputPassowrd" name="inputPassowrd" placeholder="Enter Password">
         </div>
       </div>
+      <table>
+          <tr>
+              <th>Social Media Site</th>
+              <th>User Name</th>
+              <th>Password</th>
+          </tr>
+          {% for var in sites_list %}
+          <tr>
+            <td>{{ var.social_media }}</td>
+            <td>{{ var.user_name }}</td>
+            <td>{{ var.password }}</td>
+          </tr>
+          {% endfor %}
+    </table>
 </div>
 {% endblock %}
