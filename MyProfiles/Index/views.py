@@ -6,6 +6,13 @@ from Index.models import Profile
 def index(request):
     return render(request, 'Index/register.html')
 
+def list_sites(request):
+    sites_list = {
+        'list': Profile.objects.all()
+    }
+    print(sites_list)
+    return render(request, 'Index/list.html',context = sites_list)
+
 def register(request):
     if request.method == 'POST':
         social_media_site = request.POST.get('inputSocialMedia')
