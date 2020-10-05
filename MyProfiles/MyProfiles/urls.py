@@ -20,5 +20,6 @@ from Index import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index, name = "index"),
-    re_path(r'^register/$', views.register, name = "register")
+    re_path(r'^register/$', views.register, name = "register"),
+    re_path(r'^list/$', views.list_sites, name = "list"),
 ]
