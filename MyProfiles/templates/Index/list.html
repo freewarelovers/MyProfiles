@@ -2,34 +2,19 @@
 {% block body_block %}
 <div>
     <div class="jumbotron jumbotron-fluid" style="padding: 5% 20% 5% 20%;">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="inputSocialMedia">Social Media</label>
-            <input type="text" class="form-control" id="inputSocialMedia" name="inputSocialMedia" placeholder="Enter social media site ">
-        </div>
-        <div class="form-group">
-            <label for="inputUserName">User Name</label>              
-            <input type="text" class="form-control" id="inputUserName" name="inputUserName" placeholder="Enter User Name">
-            <small class="form-text text-muted">We'll never share your user name with anyone.</small>
-        </div>
-        <div class="form-group">
-            <label for="inputPassowrd">Password</label>              
-            <input type="password" class="form-control" id="inputPassowrd" name="inputPassowrd" placeholder="Enter Password">
-        </div>
-      </div>
-      <table>
-          <tr>
-              <th>Social Media Site</th>
-              <th>User Name</th>
-              <th>Password</th>
-          </tr>
-          {% for var in sites_list %}
-          <tr>
-            <td>{{ var.social_media }}</td>
-            <td>{{ var.user_name }}</td>
-            <td>{{ var.password }}</td>
-          </tr>
-          {% endfor %}
-    </table>
-</div>
-{% endblock %}
+        <table>
+            <tr>
+                <th>Social Media Site</th>
+                <th>User Name</th>
+                <th>Password</th>
+            </tr>
+            {% for var in sites_list.length %}
+                {% for ele in var %}
+                <tr>
+                    <td>{{ sites_list.var.ele }}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </table>
+    </div>
+    {% endblock %}
