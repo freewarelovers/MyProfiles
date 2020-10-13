@@ -7,10 +7,16 @@ def index(request):
     return render(request, 'Index/register.html')
 
 def list_sites(request):
-    sites_list = {
-        'list': Profile.objects.all()
-    }
+    sites_list = {}
+    count = 0
+    for i in Profile.objects.all():
+        sites_list[count] = {'user_name': i.user_name, 'social_media': i.social_media, 'password': i.password}
+        count += 1
     print(sites_list)
+    for var in sites_list:
+        print(sites_list[var])
+        print(sites_list[var])
+        print(sites_list[var])
     return render(request, 'Index/list.html',context = sites_list)
 
 def register(request):
