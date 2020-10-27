@@ -31,3 +31,16 @@ def register(request):
             password = passowrd
         )
     return render(request, 'Index/success.html')
+
+def remove(request):
+    if request.method == 'POST':
+        social_media_site = request.POST.get('inputSocialMedia')
+        user_name = request.POST.get('inputUserName')
+        passowrd = request.POST.get('inputPassowrd')
+        password = pbkdf2_sha256.encrypt(passowrd, rounds = 12000, salt_size = 32)
+        Profile.objects.delete(
+            social_media = social_media_site,
+            user_name = user_name,
+            password = passowrd
+        )
+    return render(request, 'Index/success.html')
