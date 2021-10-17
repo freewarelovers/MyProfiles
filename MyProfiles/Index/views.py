@@ -32,6 +32,19 @@ def register(request):
         )
     return render(request, 'Index/success.html')
 
+def login(request):
+    if request.method == 'POST':
+        user_name = request.POST.get('inputUserName')
+        password = request.POST.get('inputPassword')
+        try:
+            password_check = LogIn(user_name = user_name)
+        except:
+            print('No such user')
+        if password_check == password:
+            return render(request, 'Index/list.html')
+        else:
+            print('Password Incorrect')
+
 def remove(request):
     if request.method == 'POST':
         social_media_site = request.POST.get('inputSocialMedia')
