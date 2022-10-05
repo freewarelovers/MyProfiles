@@ -23,5 +23,5 @@ urlpatterns = [
     re_path(r'^register/$', views.register, name = "register"),
     re_path(r'^list/$', views.list_sites, name = "list"),
     re_path(r'^remove/$', views.remove, name='remove'),
-    re_path(r'^login/$', views.login, name='login')
+    # re_path(r'^login/$', views.login, name='login')
 ]

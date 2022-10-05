@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from passlib.hash import pbkdf2_sha256
-from Index.models import Profile, LogIn
+# from passlib.hash import pbkdf2_sha256
+from Index.models import Profile
 
 # Create your views here.
 def index(request):
@@ -32,18 +32,18 @@ def register(request):
         )
     return render(request, 'Index/success.html')
 
-def login(request):
-    if request.method == 'POST':
-        user_name = request.POST.get('inputUserName')
-        password = request.POST.get('inputPassword')
-        try:
-            password_check = LogIn(user_name = user_name)
-        except:
-            print('No such user')
-        if password_check == pbkdf2_sha256.encrypt(password, rounds = 12000, salt_size = 32):
-            return render(request, 'Index/list.html')
-        else:
-            print('Password Incorrect')
+# def login(request):
+#     if request.method == 'POST':
+#         user_name = request.POST.get('inputUserName')
+#         password = request.POST.get('inputPassword')
+#         try:
+#             password_check = LogIn(user_name = user_name)
+#         except:
+#             print('No such user')
+#         if password_check == pbkdf2_sha256.encrypt(password, rounds = 12000, salt_size = 32):
+#             return render(request, 'Index/list.html')
+#         else:
+#             print('Password Incorrect')
 
 def remove(request):
     if request.method == 'POST':
