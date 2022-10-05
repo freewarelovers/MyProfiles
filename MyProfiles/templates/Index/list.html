@@ -1,10 +1,16 @@
 {% extends "Index/index.html" %}
 {% block body_block %}
+<style>
+    table, th, td {
+        border: 3px dotted black;
+        width: 100%;
+    }
+</style>
 <div>
-    <div class="jumbotron jumbotron-fluid" style="padding: 5% 20% 5% 20%;">
+    <div class="jumbotron jumbotron-fluid" style="padding: 5% 20% 5% 20%; border: 10%;">
         <table>
             <tr>
-                <th>Social Media Site</th>
+                <th style="padding: 2%;">Social Media Site</th>
                 <th>User Name</th>
                 <th>Password</th>
             </tr>
