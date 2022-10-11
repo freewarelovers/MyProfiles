@@ -57,3 +57,6 @@ def remove(request):
             password = passowrd
         )
     return render(request, 'Index/success.html')
+
+def contact(request):
+    return render(request, 'Index/contact.html')
