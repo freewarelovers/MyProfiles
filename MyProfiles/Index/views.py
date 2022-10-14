@@ -3,8 +3,11 @@ from django.shortcuts import render
 from Index.models import Profile
 
 # Create your views here.
-def index(request):
-    return render(request, 'Index/register.html')
+def add(request):
+    return render(request, 'Index/add_account.html')
+
+def login(request):
+    return render(request, 'Index/login.html')
 
 def list_sites(request):
     sites_list = {}
@@ -32,19 +35,6 @@ def register(request):
         )
     return render(request, 'Index/success.html')
 
-# def login(request):
-#     if request.method == 'POST':
-#         user_name = request.POST.get('inputUserName')
-#         password = request.POST.get('inputPassword')
-#         try:
-#             password_check = LogIn(user_name = user_name)
-#         except:
-#             print('No such user')
-#         if password_check == pbkdf2_sha256.encrypt(password, rounds = 12000, salt_size = 32):
-#             return render(request, 'Index/list.html')
-#         else:
-#             print('Password Incorrect')
-
 def remove(request):
     if request.method == 'POST':
         social_media_site = request.POST.get('inputSocialMedia')
@@ -60,3 +50,9 @@ def remove(request):
 
 def contact(request):
     return render(request, 'Index/contact.html')
+
+def privacy(request):
+    return render(request, 'Index/privacy.html')
+
+def terms(request):
+    return render(request, 'Index/terms.html')
