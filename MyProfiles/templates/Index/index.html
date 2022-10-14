@@ -16,7 +16,7 @@
 <body style="background-color: rgb(207, 207, 207);">
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">My Profiles</a>
+            <a class="navbar-brand" href="#">My Profiles</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,28 +36,13 @@
           </nav>
     </div>
     <div>
-      <form action="/" method="post">
-        {% csrf_token %}
-        <div class="jumbotron jumbotron-fluid" style="padding: 5% 20% 5% 20%;">
-          <div class="form-group">
-            <label for="inputUserName">User Name of Scial media site</label>              
-            <input type="text" class="form-control" id="inputUserName" name="inputUserName" placeholder="Enter User Name">
-            <small class="form-text text-muted">We'll never share your user name with anyone.</small>
-          </div>
-          <div class="form-group">
-            <label for="inputPassowrd">Password</label>              
-            <input type="password" class="form-control" id="inputPassowrd" name="inputPassowrd" placeholder="Enter Password">
-          </div>
-          <br>
-          <button type="submit" class="btn btn-primary btn-lg" style="position: absolute; left: 45%;">Submit</button>
-          <br><br><br><br><br>
-        </div>
-      </form>
+        {% block body_block %}
+        {% endblock %}
     </div>
-    <div style="position: absolute; bottom: 0%; padding-left: 5%; padding-bottom: 1.5%;">
-      <p> &#9742; <a href="/contact">Contact</a></p>
-      <p>	&#x1f512; <a href="/privacy">Privacy</a></p>
-      <p>	&#9989; <a href="/terms">Terms</a></p>
+    <div style="position: absolute; bottom: 0%; padding: 5%">
+      <p> &#9742; <a href="/contact" target="_blank" rel="noopener noreferrer">Contact</a></p>
+      <p>	&#x1f512; <a href="" target="_blank" rel="noopener noreferrer">Privacy</a></p>
+      <p>	&#9989; <a href="" target="_blank" rel="noopener noreferrer">Terms</a></p>
       <p> &copy Copyrights</p>
     </div>
 </body>
