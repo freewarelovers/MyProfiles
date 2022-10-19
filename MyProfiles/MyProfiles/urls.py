@@ -19,13 +19,14 @@ from Index import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^add$', views.add, name = "add"),
-    re_path(r'^login/$', views.login, name = "login"),
+    re_path(r'^$', views.login, name='login'),
+    re_path(r'^signin/$', views.signin, name='signin'),
+    re_path(r'^add/$', views.add, name = "add"),
     re_path(r'^register/$', views.register, name = "register"),
     re_path(r'^list/$', views.list_sites, name = "list"),
     re_path(r'^remove/$', views.remove, name='remove'),
     re_path(r'^contact/$', views.contact, name='contact'),
     re_path(r'^privacy/$', views.privacy, name='privacy'),
     re_path(r'^terms/$', views.terms, name='terms'),
-    re_path(r'^login/$', views.login, name='login')
+    
 ]

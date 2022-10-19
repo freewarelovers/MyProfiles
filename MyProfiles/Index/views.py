@@ -9,6 +9,12 @@ def add(request):
 def login(request):
     return render(request, 'Index/login.html')
 
+def signin(request):
+    if request.method == 'POST':
+        if request.POST['inputPassword-1'] == request.POST['inputPassword-2']:
+            return render(request, 'Index/list.html')
+    return render(request, 'Index/signin.html')
+
 def list_sites(request):
     sites_list = {}
     count = 0
